@@ -6,265 +6,394 @@
 
   <title>Studentools - Free Student Calculators & Tools</title>
 
-  <meta name="description" content="Studentools provides free student tools including GPA calculators, grade calculators, study timers, percentage calculators, attendance calculators, and more.">
-
-  <meta name="keywords" content="student tools, GPA calculator, grade calculator, percentage calculator, study timer, attendance calculator, student calculator">
+  <meta name="description" content="Free calculators and tools for students. Calculate GPA, grades, final exam scores, attendance, percentages, and more.">
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #171717;
-      line-height: 1.5;
+      color: #202124;
+      background: #ffffff;
     }
 
-    header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav {
-      max-width: 1150px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      color: #111827;
+    a {
+      color: inherit;
       text-decoration: none;
     }
 
-    .logo span {
-      color: #4f46e5;
+    /* NAVIGATION */
+
+    .topbar {
+      height: 64px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
     }
 
+    .nav-inner {
+      max-width: 1180px;
+      height: 100%;
+      margin: auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #315efb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .nav-links a:hover {
+      color: #315efb;
+    }
+
+    /* PAGE */
+
+    .page {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    /* HERO */
+
     .hero {
-      text-align: center;
-      padding: 70px 20px 45px;
-      background: white;
+      max-width: 780px;
+      padding: 72px 0 48px;
     }
 
     .hero h1 {
-      font-size: clamp(40px, 7vw, 65px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      letter-spacing: -2px;
-    }
-
-    .hero h1 span {
-      color: #4f46e5;
+      font-size: 48px;
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      margin: 0 0 18px;
+      font-weight: 700;
     }
 
     .hero p {
+      margin: 0;
       max-width: 650px;
-      margin: auto;
-      color: #667085;
+      color: #666;
       font-size: 18px;
+      line-height: 1.6;
     }
 
     .search {
-      max-width: 600px;
-      margin: 30px auto 0;
+      margin-top: 28px;
+      max-width: 580px;
     }
 
     .search input {
       width: 100%;
-      padding: 17px 20px;
-      border: 1px solid #d9dce3;
-      border-radius: 14px;
-      font-size: 16px;
+      height: 50px;
+      padding: 0 16px;
+      border: 1px solid #cfcfcf;
+      border-radius: 7px;
+      font-size: 15px;
       outline: none;
     }
 
     .search input:focus {
-      border-color: #4f46e5;
-      box-shadow: 0 0 0 3px rgba(79,70,229,.1);
+      border-color: #315efb;
+      box-shadow: 0 0 0 2px rgba(49, 94, 251, 0.08);
     }
 
-    .container {
-      max-width: 1150px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+    /* AD SPACE */
 
-    .section-title {
-      font-size: 28px;
-      margin: 20px 0;
-    }
-
-    .tools {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
-
-    .tool-card {
-      background: white;
-      padding: 23px;
-      border-radius: 18px;
-      border: 1px solid #e5e7eb;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
-    }
-
-    .icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 12px;
-      background: #eef2ff;
+    .ad {
+      width: 100%;
+      min-height: 110px;
+      border: 1px solid #eeeeee;
+      background: #fafafa;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 22px;
-      margin-bottom: 14px;
+      color: #b1b1b1;
+      font-size: 11px;
+      letter-spacing: .5px;
+      margin: 20px 0 42px;
+    }
+
+    .ad span {
+      text-transform: uppercase;
+    }
+
+    /* CONTENT */
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.4px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* TOOL GRID */
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #e5e5e5;
+      border-left: 1px solid #e5e5e5;
+    }
+
+    .tool-card {
+      min-height: 155px;
+      padding: 24px;
+      background: #fff;
+      border-right: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      cursor: pointer;
+      transition: background .15s ease;
+    }
+
+    .tool-card:hover {
+      background: #f8faff;
     }
 
     .tool-card h3 {
-      margin-bottom: 6px;
+      margin: 0 0 9px;
+      font-size: 17px;
+      font-weight: 600;
     }
 
     .tool-card p {
-      color: #667085;
+      margin: 0;
+      color: #707070;
       font-size: 14px;
+      line-height: 1.55;
     }
+
+    .tool-category {
+      display: block;
+      margin-bottom: 14px;
+      color: #315efb;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    /* CALCULATOR */
 
     .calculator {
       display: none;
-      max-width: 650px;
-      margin: 20px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      border: 1px solid #e5e7eb;
+      max-width: 680px;
+      margin: 20px auto 60px;
     }
 
     .calculator.active {
       display: block;
     }
 
+    .calculator-box {
+      border: 1px solid #e1e1e1;
+      background: white;
+      padding: 32px;
+    }
+
     .calculator h2 {
-      margin-bottom: 5px;
+      margin: 0 0 8px;
       font-size: 28px;
     }
 
-    .description {
-      color: #667085;
-      margin-bottom: 25px;
-    }
-
-    .field {
-      margin-bottom: 17px;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 7px;
-    }
-
-    input,
-    select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      background: #4f46e5;
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #4338ca;
+    .calculator-description {
+      color: #6d6d6d;
+      margin: 0 0 28px;
+      line-height: 1.5;
     }
 
     .back {
-      background: #eef0f4;
-      color: #111827;
-      margin-bottom: 20px;
+      width: auto;
+      padding: 0;
+      margin-bottom: 22px;
+      background: transparent;
+      border: none;
+      color: #315efb;
+      font-size: 14px;
+      cursor: pointer;
     }
 
     .back:hover {
-      background: #e5e7eb;
+      background: transparent;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cfcfcf;
+      border-radius: 6px;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #315efb;
+    }
+
+    .calculate {
+      width: 100%;
+      height: 46px;
+      background: #315efb;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .calculate:hover {
+      background: #244bd0;
     }
 
     .result {
       display: none;
       margin-top: 20px;
       padding: 18px;
-      background: #eef2ff;
-      border-radius: 12px;
+      background: #f5f7ff;
+      border: 1px solid #dfe5ff;
+      border-radius: 6px;
       text-align: center;
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.5;
     }
 
-    .info {
-      max-width: 800px;
+    /* INFORMATION */
+
+    .information {
+      max-width: 780px;
       margin: 70px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid #e5e7eb;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 35px;
     }
 
-    .info h2 {
-      margin-bottom: 12px;
+    .information h2 {
+      margin: 0 0 15px;
+      font-size: 23px;
     }
 
-    .info p {
-      color: #667085;
-      margin-bottom: 15px;
+    .information p {
+      margin: 0 0 15px;
+      color: #666;
+      line-height: 1.7;
+      font-size: 15px;
     }
+
+    /* FOOTER */
 
     footer {
-      background: white;
-      border-top: 1px solid #e5e7eb;
-      text-align: center;
-      padding: 40px 20px;
-      color: #667085;
-      margin-top: 60px;
+      margin-top: 80px;
+      border-top: 1px solid #e5e5e5;
+      padding: 30px 24px;
+      color: #777;
+      font-size: 13px;
     }
 
-    @media (max-width: 600px) {
-      .hero {
-        padding: 50px 20px 35px;
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .tools {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .hero h1 {
-        font-size: 42px;
+        font-size: 40px;
       }
 
-      .calculator {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .page {
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 48px 0 35px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .tools {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-card {
+        min-height: auto;
+      }
+
+      .calculator-box {
         padding: 22px;
+      }
+
+      .footer-inner {
+        display: block;
       }
     }
   </style>
@@ -272,316 +401,322 @@
 
 <body>
 
-<header>
-  <div class="nav">
-    <a href="#" class="logo">Student<span>ools</span></a>
+<header class="topbar">
+
+  <div class="nav-inner">
+
+    <a href="#" class="logo">
+      Student<span>ools</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#tools-section">Tools</a>
+      <a href="#about">About</a>
+    </nav>
+
   </div>
+
 </header>
 
 
-<section class="hero">
+<div class="page">
 
-  <h1>Tools built for <span>students.</span></h1>
+  <!-- HERO -->
 
-  <p>
-    Free calculators and useful tools to help you manage grades,
-    studying, assignments, and school.
-  </p>
+  <section class="hero">
 
-  <div class="search">
-    <input
-      type="text"
-      id="search"
-      placeholder="Search student tools..."
-      oninput="searchTools()"
-    >
-  </div>
+    <h1>Simple tools for students.</h1>
 
-</section>
+    <p>
+      Free calculators and useful tools for grades, studying,
+      assignments, and everyday schoolwork.
+    </p>
 
+    <div class="search">
 
-<main class="container">
-
-  <h2 class="section-title">Student Tools</h2>
-
-  <div class="tools" id="tools">
-
-
-    <!-- GPA -->
-
-    <div
-      class="tool-card"
-      data-name="gpa calculator grade point average"
-      onclick="openTool('gpa')"
-    >
-
-      <div class="icon">🎓</div>
-
-      <h3>GPA Calculator</h3>
-
-      <p>
-        Calculate your GPA from your total grade points and classes.
-      </p>
+      <input
+        id="search"
+        type="text"
+        placeholder="Search for a tool..."
+        oninput="searchTools()"
+      >
 
     </div>
 
-
-    <!-- Grade -->
-
-    <div
-      class="tool-card"
-      data-name="grade calculator percentage"
-      onclick="openTool('grade')"
-    >
-
-      <div class="icon">📊</div>
-
-      <h3>Grade Calculator</h3>
-
-      <p>
-        Calculate your percentage and letter grade.
-      </p>
-
-    </div>
+  </section>
 
 
-    <!-- Final Grade -->
+  <!-- TOP AD -->
 
-    <div
-      class="tool-card"
-      data-name="final grade calculator exam"
-      onclick="openTool('final')"
-    >
-
-      <div class="icon">📝</div>
-
-      <h3>Final Grade Calculator</h3>
-
-      <p>
-        Find out what score you need on your final exam.
-      </p>
-
-    </div>
-
-
-    <!-- Percentage -->
-
-    <div
-      class="tool-card"
-      data-name="percentage calculator"
-      onclick="openTool('percentage')"
-    >
-
-      <div class="icon">%</div>
-
-      <h3>Percentage Calculator</h3>
-
-      <p>
-        Quickly calculate percentages.
-      </p>
-
-    </div>
-
-
-    <!-- Attendance -->
-
-    <div
-      class="tool-card"
-      data-name="attendance calculator school"
-      onclick="openTool('attendance')"
-    >
-
-      <div class="icon">📅</div>
-
-      <h3>Attendance Calculator</h3>
-
-      <p>
-        Calculate your current attendance percentage.
-      </p>
-
-    </div>
-
-
-    <!-- Study Timer -->
-
-    <div
-      class="tool-card"
-      data-name="study timer pomodoro"
-      onclick="openTool('timer')"
-    >
-
-      <div class="icon">⏱️</div>
-
-      <h3>Study Timer</h3>
-
-      <p>
-        Use a simple timer to stay focused while studying.
-      </p>
-
-    </div>
-
-
-    <!-- GPA Weighted -->
-
-    <div
-      class="tool-card"
-      data-name="weighted gpa calculator"
-      onclick="openTool('weighted')"
-    >
-
-      <div class="icon">🏆</div>
-
-      <h3>Weighted GPA Calculator</h3>
-
-      <p>
-        Calculate GPA using weighted classes.
-      </p>
-
-    </div>
-
-
-    <!-- Test Score -->
-
-    <div
-      class="tool-card"
-      data-name="test score calculator"
-      onclick="openTool('test')"
-    >
-
-      <div class="icon">✏️</div>
-
-      <h3>Test Score Calculator</h3>
-
-      <p>
-        Calculate your test percentage and letter grade.
-      </p>
-
-    </div>
-
-
-    <!-- Word Counter -->
-
-    <div
-      class="tool-card"
-      data-name="word counter essay"
-      onclick="openTool('words')"
-    >
-
-      <div class="icon">📖</div>
-
-      <h3>Word Counter</h3>
-
-      <p>
-        Count words and characters in your essay.
-      </p>
-
-    </div>
-
-
-    <!-- Study Hours -->
-
-    <div
-      class="tool-card"
-      data-name="study hours calculator"
-      onclick="openTool('studyhours')"
-    >
-
-      <div class="icon">📚</div>
-
-      <h3>Study Time Calculator</h3>
-
-      <p>
-        Calculate how much time you have available to study.
-      </p>
-
-    </div>
-
+  <div class="ad">
+    <span>Advertisement</span>
   </div>
 
 
-  <!-- GPA CALCULATOR -->
+  <!-- TOOLS -->
+
+  <section id="tools-section">
+
+    <div class="section-heading">
+
+      <h2>Student tools</h2>
+
+      <p id="tool-count">10 tools</p>
+
+    </div>
+
+
+    <div class="tools" id="tools">
+
+
+      <div
+        class="tool-card"
+        data-name="gpa calculator grade point average"
+        onclick="openTool('gpa')"
+      >
+
+        <span class="tool-category">Grades</span>
+
+        <h3>GPA Calculator</h3>
+
+        <p>
+          Calculate your GPA using your grades and number of classes.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="grade calculator percentage"
+        onclick="openTool('grade')"
+      >
+
+        <span class="tool-category">Grades</span>
+
+        <h3>Grade Calculator</h3>
+
+        <p>
+          Calculate your percentage and letter grade from points earned.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="final exam final grade calculator"
+        onclick="openTool('final')"
+      >
+
+        <span class="tool-category">Grades</span>
+
+        <h3>Final Grade Calculator</h3>
+
+        <p>
+          Find the score you need on your final exam to reach your target grade.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="percentage calculator"
+        onclick="openTool('percentage')"
+      >
+
+        <span class="tool-category">Math</span>
+
+        <h3>Percentage Calculator</h3>
+
+        <p>
+          Calculate percentages quickly and accurately.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="attendance calculator school attendance"
+        onclick="openTool('attendance')"
+      >
+
+        <span class="tool-category">School</span>
+
+        <h3>Attendance Calculator</h3>
+
+        <p>
+          Calculate your current attendance percentage.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="study timer pomodoro"
+        onclick="openTool('timer')"
+      >
+
+        <span class="tool-category">Study</span>
+
+        <h3>Study Timer</h3>
+
+        <p>
+          Set a focused study session and keep track of your time.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="test score calculator test grade"
+        onclick="openTool('test')"
+      >
+
+        <span class="tool-category">Grades</span>
+
+        <h3>Test Score Calculator</h3>
+
+        <p>
+          Calculate your test percentage and letter grade.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="word counter essay words"
+        onclick="openTool('words')"
+      >
+
+        <span class="tool-category">Writing</span>
+
+        <h3>Word Counter</h3>
+
+        <p>
+          Count words and characters in essays and assignments.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="study time calculator"
+        onclick="openTool('studyhours')"
+      >
+
+        <span class="tool-category">Study</span>
+
+        <h3>Study Time Calculator</h3>
+
+        <p>
+          Divide your available study time between subjects.
+        </p>
+
+      </div>
+
+
+      <div
+        class="tool-card"
+        data-name="age calculator birthday"
+        onclick="openTool('age')"
+      >
+
+        <span class="tool-category">Everyday</span>
+
+        <h3>Age Calculator</h3>
+
+        <p>
+          Calculate your exact age from your date of birth.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- MIDDLE AD -->
+
+  <div class="ad">
+    <span>Advertisement</span>
+  </div>
+
+
+  <!-- GPA -->
 
   <div class="calculator" id="gpa">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>GPA Calculator</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Enter your total grade points and number of classes.
-    </p>
+      <h2>GPA Calculator</h2>
 
-    <div class="field">
+      <p class="calculator-description">
+        Enter your total grade points and number of classes.
+      </p>
 
-      <label>Total Grade Points</label>
+      <div class="field">
+        <label>Total Grade Points</label>
+        <input id="gradePoints" type="number" step="0.01">
+      </div>
 
-      <input
-        id="gradePoints"
-        type="number"
-        step="0.01"
-      >
+      <div class="field">
+        <label>Number of Classes</label>
+        <input id="classes" type="number">
+      </div>
 
-    </div>
+      <button class="calculate" onclick="calculateGPA()">
+        Calculate GPA
+      </button>
 
-    <div class="field">
-
-      <label>Number of Classes</label>
-
-      <input
-        id="classes"
-        type="number"
-      >
+      <div class="result" id="gpaResult"></div>
 
     </div>
-
-    <button onclick="calculateGPA()">
-      Calculate GPA
-    </button>
-
-    <div class="result" id="gpaResult"></div>
 
   </div>
 
 
-  <!-- GRADE CALCULATOR -->
+  <!-- GRADE -->
 
   <div class="calculator" id="grade">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Grade Calculator</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Calculate your percentage and letter grade.
-    </p>
+      <h2>Grade Calculator</h2>
 
-    <div class="field">
+      <p class="calculator-description">
+        Enter the points you earned and the total possible points.
+      </p>
 
-      <label>Points Earned</label>
+      <div class="field">
+        <label>Points Earned</label>
+        <input id="earned" type="number">
+      </div>
 
-      <input
-        id="earned"
-        type="number"
-      >
+      <div class="field">
+        <label>Total Points</label>
+        <input id="possible" type="number">
+      </div>
 
-    </div>
+      <button class="calculate" onclick="calculateGrade()">
+        Calculate Grade
+      </button>
 
-    <div class="field">
-
-      <label>Total Points</label>
-
-      <input
-        id="possible"
-        type="number"
-      >
+      <div class="result" id="gradeResult"></div>
 
     </div>
-
-    <button onclick="calculateGrade()">
-      Calculate Grade
-    </button>
-
-    <div class="result" id="gradeResult"></div>
 
   </div>
 
@@ -590,52 +725,38 @@
 
   <div class="calculator" id="final">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Final Grade Calculator</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Find out what you need on your final exam.
-    </p>
+      <h2>Final Grade Calculator</h2>
 
-    <div class="field">
+      <p class="calculator-description">
+        Find the score you need on your final exam.
+      </p>
 
-      <label>Current Grade (%)</label>
+      <div class="field">
+        <label>Current Grade (%)</label>
+        <input id="currentGrade" type="number">
+      </div>
 
-      <input
-        id="currentGrade"
-        type="number"
-      >
+      <div class="field">
+        <label>Final Exam Weight (%)</label>
+        <input id="finalWeight" type="number">
+      </div>
 
-    </div>
+      <div class="field">
+        <label>Desired Overall Grade (%)</label>
+        <input id="desiredGrade" type="number">
+      </div>
 
-    <div class="field">
+      <button class="calculate" onclick="calculateFinal()">
+        Calculate Required Score
+      </button>
 
-      <label>Final Exam Weight (%)</label>
-
-      <input
-        id="finalWeight"
-        type="number"
-      >
-
-    </div>
-
-    <div class="field">
-
-      <label>Desired Final Grade (%)</label>
-
-      <input
-        id="desiredGrade"
-        type="number"
-      >
+      <div class="result" id="finalResult"></div>
 
     </div>
-
-    <button onclick="calculateFinal()">
-      Calculate Required Score
-    </button>
-
-    <div class="result" id="finalResult"></div>
 
   </div>
 
@@ -644,41 +765,33 @@
 
   <div class="calculator" id="percentage">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Percentage Calculator</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Find what percentage one number is of another.
-    </p>
+      <h2>Percentage Calculator</h2>
 
-    <div class="field">
+      <p class="calculator-description">
+        Find what percentage one number is of another.
+      </p>
 
-      <label>Part</label>
+      <div class="field">
+        <label>Part</label>
+        <input id="part" type="number">
+      </div>
 
-      <input
-        id="part"
-        type="number"
-      >
+      <div class="field">
+        <label>Total</label>
+        <input id="total" type="number">
+      </div>
 
-    </div>
+      <button class="calculate" onclick="calculatePercentage()">
+        Calculate Percentage
+      </button>
 
-    <div class="field">
-
-      <label>Total</label>
-
-      <input
-        id="total"
-        type="number"
-      >
+      <div class="result" id="percentageResult"></div>
 
     </div>
-
-    <button onclick="calculatePercentage()">
-      Calculate
-    </button>
-
-    <div class="result" id="percentageResult"></div>
 
   </div>
 
@@ -687,41 +800,33 @@
 
   <div class="calculator" id="attendance">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Attendance Calculator</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Calculate your current school attendance.
-    </p>
+      <h2>Attendance Calculator</h2>
 
-    <div class="field">
+      <p class="calculator-description">
+        Calculate your current attendance percentage.
+      </p>
 
-      <label>Days Attended</label>
+      <div class="field">
+        <label>Days Attended</label>
+        <input id="attended" type="number">
+      </div>
 
-      <input
-        id="attended"
-        type="number"
-      >
+      <div class="field">
+        <label>Total School Days</label>
+        <input id="schoolDays" type="number">
+      </div>
 
-    </div>
+      <button class="calculate" onclick="calculateAttendance()">
+        Calculate Attendance
+      </button>
 
-    <div class="field">
-
-      <label>Total School Days</label>
-
-      <input
-        id="schoolDays"
-        type="number"
-      >
+      <div class="result" id="attendanceResult"></div>
 
     </div>
-
-    <button onclick="calculateAttendance()">
-      Calculate Attendance
-    </button>
-
-    <div class="result" id="attendanceResult"></div>
 
   </div>
 
@@ -730,137 +835,90 @@
 
   <div class="calculator" id="timer">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Study Timer</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Set a timer and focus on your work.
-    </p>
+      <h2>Study Timer</h2>
 
-    <div
-      id="timerDisplay"
-      style="
-        text-align:center;
-        font-size:55px;
-        font-weight:800;
-        margin:25px 0;
-      "
-    >
-      25:00
-    </div>
+      <p class="calculator-description">
+        Set a study session and stay focused.
+      </p>
 
-    <div class="field">
-
-      <label>Minutes</label>
-
-      <input
-        id="timerMinutes"
-        type="number"
-        value="25"
+      <div
+        id="timerDisplay"
+        style="
+          text-align:center;
+          font-size:52px;
+          font-weight:700;
+          margin:30px 0;
+        "
       >
+        25:00
+      </div>
+
+      <div class="field">
+        <label>Study Time (minutes)</label>
+        <input id="timerMinutes" type="number" value="25">
+      </div>
+
+      <button class="calculate" onclick="startTimer()">
+        Start Timer
+      </button>
+
+      <br><br>
+
+      <button
+        onclick="resetTimer()"
+        style="
+          width:100%;
+          height:46px;
+          border:1px solid #d5d5d5;
+          background:#fff;
+          color:#333;
+          border-radius:6px;
+          cursor:pointer;
+        "
+      >
+        Reset
+      </button>
 
     </div>
-
-    <button onclick="startTimer()">
-      Start Timer
-    </button>
-
-    <br><br>
-
-    <button
-      onclick="resetTimer()"
-      style="background:#e5e7eb;color:#111827;"
-    >
-      Reset
-    </button>
 
   </div>
 
 
-  <!-- WEIGHTED GPA -->
-
-  <div class="calculator" id="weighted">
-
-    <button class="back" onclick="closeTools()">← Back to tools</button>
-
-    <h2>Weighted GPA Calculator</h2>
-
-    <p class="description">
-      Enter your GPA points and class credits.
-    </p>
-
-    <div class="field">
-
-      <label>Total Weighted Grade Points</label>
-
-      <input
-        id="weightedPoints"
-        type="number"
-        step="0.01"
-      >
-
-    </div>
-
-    <div class="field">
-
-      <label>Total Credits</label>
-
-      <input
-        id="credits"
-        type="number"
-      >
-
-    </div>
-
-    <button onclick="calculateWeighted()">
-      Calculate GPA
-    </button>
-
-    <div class="result" id="weightedResult"></div>
-
-  </div>
-
-
-  <!-- TEST SCORE -->
+  <!-- TEST -->
 
   <div class="calculator" id="test">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Test Score Calculator</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Calculate your test score.
-    </p>
+      <h2>Test Score Calculator</h2>
 
-    <div class="field">
+      <p class="calculator-description">
+        Calculate your test score from correct answers.
+      </p>
 
-      <label>Correct Answers</label>
+      <div class="field">
+        <label>Correct Answers</label>
+        <input id="correct" type="number">
+      </div>
 
-      <input
-        id="correct"
-        type="number"
-      >
+      <div class="field">
+        <label>Total Questions</label>
+        <input id="questions" type="number">
+      </div>
 
-    </div>
+      <button class="calculate" onclick="calculateTest()">
+        Calculate Score
+      </button>
 
-    <div class="field">
-
-      <label>Total Questions</label>
-
-      <input
-        id="questions"
-        type="number"
-      >
+      <div class="result" id="testResult"></div>
 
     </div>
-
-    <button onclick="calculateTest()">
-      Calculate Score
-    </button>
-
-    <div class="result" id="testResult"></div>
 
   </div>
 
@@ -869,39 +927,38 @@
 
   <div class="calculator" id="words">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Word Counter</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Paste your essay or assignment below.
-    </p>
+      <h2>Word Counter</h2>
 
-    <textarea
-      id="wordText"
-      oninput="countWords()"
-      placeholder="Start typing or paste your essay..."
-      style="
-        width:100%;
-        height:220px;
-        padding:15px;
-        border:1px solid #d1d5db;
-        border-radius:10px;
-        font-size:16px;
-        resize:vertical;
-      "
-    ></textarea>
+      <p class="calculator-description">
+        Count the words and characters in your assignment.
+      </p>
 
-    <div
-      id="wordResult"
-      style="
-        margin-top:20px;
-        text-align:center;
-        font-weight:700;
-        font-size:18px;
-      "
-    >
-      0 words • 0 characters
+      <div class="field">
+
+        <textarea
+          id="wordText"
+          rows="10"
+          oninput="countWords()"
+          placeholder="Paste or type your text here..."
+        ></textarea>
+
+      </div>
+
+      <div
+        id="wordResult"
+        style="
+          text-align:center;
+          font-weight:600;
+          color:#555;
+        "
+      >
+        0 words · 0 characters
+      </div>
+
     </div>
 
   </div>
@@ -911,97 +968,163 @@
 
   <div class="calculator" id="studyhours">
 
-    <button class="back" onclick="closeTools()">← Back to tools</button>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
 
-    <h2>Study Time Calculator</h2>
+    <div class="calculator-box">
 
-    <p class="description">
-      Calculate how much time you have available to study.
-    </p>
+      <h2>Study Time Calculator</h2>
 
-    <div class="field">
+      <p class="calculator-description">
+        Calculate how much time you can spend studying each subject.
+      </p>
 
-      <label>Total Available Hours</label>
+      <div class="field">
+        <label>Available Hours</label>
+        <input id="availableHours" type="number" step="0.1">
+      </div>
 
-      <input
-        id="availableHours"
-        type="number"
-        step="0.1"
-      >
+      <div class="field">
+        <label>Number of Subjects</label>
+        <input id="subjects" type="number">
+      </div>
 
-    </div>
+      <button class="calculate" onclick="calculateStudyTime()">
+        Calculate
+      </button>
 
-    <div class="field">
-
-      <label>Number of Subjects</label>
-
-      <input
-        id="subjects"
-        type="number"
-      >
+      <div class="result" id="studyResult"></div>
 
     </div>
-
-    <button onclick="calculateStudyTime()">
-      Calculate
-    </button>
-
-    <div class="result" id="studyResult"></div>
 
   </div>
 
 
-  <!-- SEO INFORMATION -->
+  <!-- AGE -->
 
-  <section class="info">
+  <div class="calculator" id="age">
 
-    <h2>Free Student Tools</h2>
+    <button class="back" onclick="closeTools()">← Back to all tools</button>
+
+    <div class="calculator-box">
+
+      <h2>Age Calculator</h2>
+
+      <p class="calculator-description">
+        Enter your date of birth to calculate your age.
+      </p>
+
+      <div class="field">
+        <label>Date of Birth</label>
+        <input id="birthday" type="date">
+      </div>
+
+      <button class="calculate" onclick="calculateAge()">
+        Calculate Age
+      </button>
+
+      <div class="result" id="ageResult"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOTTOM AD -->
+
+  <div class="ad">
+    <span>Advertisement</span>
+  </div>
+
+
+  <!-- ABOUT -->
+
+  <section class="information" id="about">
+
+    <h2>About Studentools</h2>
 
     <p>
-      Studentools is a collection of free online tools designed
-      to help students with school, studying, grades, and everyday
-      academic tasks.
+      Studentools provides simple, free online tools designed
+      specifically for students.
     </p>
 
     <p>
-      Use our calculators to check your GPA, calculate grades,
-      determine the score you need on a final exam, calculate
-      attendance, track study time, count words, and more.
+      Whether you need to calculate your GPA, figure out what
+      you need on a final exam, check your attendance, or keep
+      track of your study time, Studentools makes it quick and easy.
     </p>
 
     <p>
-      Studentools is designed to be fast, simple, mobile-friendly,
-      and completely free to use.
+      All tools are available online and work on phones,
+      tablets, and computers.
     </p>
 
   </section>
 
-</main>
+</div>
 
 
 <footer>
 
-  <p>
-    © 2026 Studentools. Free student tools.
-  </p>
+  <div class="footer-inner">
+
+    <div>
+      © 2026 Studentools
+    </div>
+
+    <div>
+      Free tools for students
+    </div>
+
+  </div>
 
 </footer>
 
 
 <script>
 
+/* SEARCH */
 
-// -------------------------
-// NAVIGATION
-// -------------------------
+function searchTools() {
+
+  const search =
+    document.getElementById("search").value.toLowerCase();
+
+  let visible = 0;
+
+  document.querySelectorAll(".tool-card").forEach(card => {
+
+    const name =
+      card.dataset.name.toLowerCase();
+
+    if (name.includes(search)) {
+
+      card.style.display = "";
+
+      visible++;
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+  document.getElementById("tool-count").textContent =
+    visible + (visible === 1 ? " tool" : " tools");
+
+}
+
+
+/* OPEN TOOL */
 
 function openTool(id) {
 
-  document.querySelector(".tools").style.display = "none";
+  document.getElementById("tools").style.display = "none";
 
-  document.querySelector(".section-title").style.display = "none";
+  document.querySelector(".section-heading").style.display = "none";
 
-  document.querySelector(".info").style.display = "none";
+  document.querySelector(".information").style.display = "none";
 
   document.querySelectorAll(".calculator").forEach(tool => {
     tool.classList.remove("active");
@@ -1013,16 +1136,19 @@ function openTool(id) {
     top: 0,
     behavior: "smooth"
   });
+
 }
 
 
+/* CLOSE TOOL */
+
 function closeTools() {
 
-  document.querySelector(".tools").style.display = "grid";
+  document.getElementById("tools").style.display = "grid";
 
-  document.querySelector(".section-title").style.display = "block";
+  document.querySelector(".section-heading").style.display = "flex";
 
-  document.querySelector(".info").style.display = "block";
+  document.querySelector(".information").style.display = "block";
 
   document.querySelectorAll(".calculator").forEach(tool => {
     tool.classList.remove("active");
@@ -1031,38 +1157,7 @@ function closeTools() {
 }
 
 
-// -------------------------
-// SEARCH
-// -------------------------
-
-function searchTools() {
-
-  const search =
-    document.getElementById("search").value.toLowerCase();
-
-  document.querySelectorAll(".tool-card").forEach(card => {
-
-    const name =
-      card.dataset.name.toLowerCase();
-
-    if (name.includes(search)) {
-
-      card.style.display = "block";
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-}
-
-
-// -------------------------
-// GPA
-// -------------------------
+/* GPA */
 
 function calculateGPA() {
 
@@ -1072,12 +1167,13 @@ function calculateGPA() {
   const classes =
     parseFloat(document.getElementById("classes").value);
 
-  if (!points || !classes || classes <= 0) {
+  if (
+    isNaN(points) ||
+    isNaN(classes) ||
+    classes <= 0
+  ) {
 
-    showResult(
-      "gpaResult",
-      "Please enter valid numbers."
-    );
+    showResult("gpaResult", "Please enter valid numbers.");
 
     return;
   }
@@ -1092,9 +1188,7 @@ function calculateGPA() {
 }
 
 
-// -------------------------
-// GRADE
-// -------------------------
+/* GRADE */
 
 function calculateGrade() {
 
@@ -1104,25 +1198,31 @@ function calculateGrade() {
   const possible =
     parseFloat(document.getElementById("possible").value);
 
-  if (!possible || earned < 0) return;
+  if (
+    isNaN(earned) ||
+    isNaN(possible) ||
+    possible <= 0
+  ) {
+
+    showResult("gradeResult", "Please enter valid numbers.");
+
+    return;
+  }
 
   const percentage =
-    (earned / possible) * 100;
-
-  const letter =
-    getLetterGrade(percentage);
+    earned / possible * 100;
 
   showResult(
     "gradeResult",
-    percentage.toFixed(2) + "% — " + letter
+    percentage.toFixed(2) +
+    "% — " +
+    getLetterGrade(percentage)
   );
 
 }
 
 
-// -------------------------
-// FINAL GRADE
-// -------------------------
+/* FINAL */
 
 function calculateFinal() {
 
@@ -1155,19 +1255,29 @@ function calculateFinal() {
     (desired - current * (1 - weight / 100))
     / (weight / 100);
 
+  if (required > 100) {
+
+    showResult(
+      "finalResult",
+      "You would need " +
+      required.toFixed(2) +
+      "%. That is above 100%."
+    );
+
+    return;
+  }
+
   showResult(
     "finalResult",
-    "You need approximately " +
+    "You need " +
     required.toFixed(2) +
-    "% on your final."
+    "% on your final exam."
   );
 
 }
 
 
-// -------------------------
-// PERCENTAGE
-// -------------------------
+/* PERCENTAGE */
 
 function calculatePercentage() {
 
@@ -1177,10 +1287,22 @@ function calculatePercentage() {
   const total =
     parseFloat(document.getElementById("total").value);
 
-  if (!total) return;
+  if (
+    isNaN(part) ||
+    isNaN(total) ||
+    total === 0
+  ) {
+
+    showResult(
+      "percentageResult",
+      "Please enter valid numbers."
+    );
+
+    return;
+  }
 
   const percentage =
-    (part / total) * 100;
+    part / total * 100;
 
   showResult(
     "percentageResult",
@@ -1190,9 +1312,7 @@ function calculatePercentage() {
 }
 
 
-// -------------------------
-// ATTENDANCE
-// -------------------------
+/* ATTENDANCE */
 
 function calculateAttendance() {
 
@@ -1202,10 +1322,22 @@ function calculateAttendance() {
   const total =
     parseFloat(document.getElementById("schoolDays").value);
 
-  if (!total || attended < 0) return;
+  if (
+    isNaN(attended) ||
+    isNaN(total) ||
+    total <= 0
+  ) {
+
+    showResult(
+      "attendanceResult",
+      "Please enter valid numbers."
+    );
+
+    return;
+  }
 
   const percentage =
-    (attended / total) * 100;
+    attended / total * 100;
 
   showResult(
     "attendanceResult",
@@ -1217,35 +1349,7 @@ function calculateAttendance() {
 }
 
 
-// -------------------------
-// WEIGHTED GPA
-// -------------------------
-
-function calculateWeighted() {
-
-  const points =
-    parseFloat(document.getElementById("weightedPoints").value);
-
-  const credits =
-    parseFloat(document.getElementById("credits").value);
-
-  if (!credits || credits <= 0) return;
-
-  const gpa =
-    points / credits;
-
-  showResult(
-    "weightedResult",
-    "Your weighted GPA is " +
-    gpa.toFixed(2)
-  );
-
-}
-
-
-// -------------------------
-// TEST SCORE
-// -------------------------
+/* TEST */
 
 function calculateTest() {
 
@@ -1255,27 +1359,34 @@ function calculateTest() {
   const questions =
     parseFloat(document.getElementById("questions").value);
 
-  if (!questions || correct < 0) return;
+  if (
+    isNaN(correct) ||
+    isNaN(questions) ||
+    questions <= 0
+  ) {
+
+    showResult(
+      "testResult",
+      "Please enter valid numbers."
+    );
+
+    return;
+  }
 
   const percentage =
-    (correct / questions) * 100;
-
-  const letter =
-    getLetterGrade(percentage);
+    correct / questions * 100;
 
   showResult(
     "testResult",
     percentage.toFixed(2) +
     "% — " +
-    letter
+    getLetterGrade(percentage)
   );
 
 }
 
 
-// -------------------------
-// WORD COUNTER
-// -------------------------
+/* WORD COUNTER */
 
 function countWords() {
 
@@ -1284,11 +1395,10 @@ function countWords() {
 
   if (!text) {
 
-    document.getElementById("wordResult").innerText =
-      "0 words • 0 characters";
+    document.getElementById("wordResult").textContent =
+      "0 words · 0 characters";
 
     return;
-
   }
 
   const words =
@@ -1297,18 +1407,16 @@ function countWords() {
   const characters =
     text.length;
 
-  document.getElementById("wordResult").innerText =
+  document.getElementById("wordResult").textContent =
     words +
-    " words • " +
+    " words · " +
     characters +
     " characters";
 
 }
 
 
-// -------------------------
-// STUDY TIME
-// -------------------------
+/* STUDY TIME */
 
 function calculateStudyTime() {
 
@@ -1322,25 +1430,84 @@ function calculateStudyTime() {
       document.getElementById("subjects").value
     );
 
-  if (!hours || !subjects || subjects <= 0) return;
+  if (
+    isNaN(hours) ||
+    isNaN(subjects) ||
+    subjects <= 0
+  ) {
 
-  const perSubject =
+    showResult(
+      "studyResult",
+      "Please enter valid numbers."
+    );
+
+    return;
+  }
+
+  const result =
     hours / subjects;
 
   showResult(
     "studyResult",
-    perSubject.toFixed(2) +
+    result.toFixed(2) +
     " hours per subject"
   );
 
 }
 
 
-// -------------------------
-// TIMER
-// -------------------------
+/* AGE */
 
-let timerInterval;
+function calculateAge() {
+
+  const birthday =
+    new Date(
+      document.getElementById("birthday").value
+    );
+
+  if (isNaN(birthday.getTime())) {
+
+    showResult(
+      "ageResult",
+      "Please enter your birthday."
+    );
+
+    return;
+  }
+
+  const today = new Date();
+
+  let age =
+    today.getFullYear() -
+    birthday.getFullYear();
+
+  const month =
+    today.getMonth() -
+    birthday.getMonth();
+
+  if (
+    month < 0 ||
+    (
+      month === 0 &&
+      today.getDate() < birthday.getDate()
+    )
+  ) {
+
+    age--;
+
+  }
+
+  showResult(
+    "ageResult",
+    "You are " + age + " years old."
+  );
+
+}
+
+
+/* TIMER */
+
+let timerInterval = null;
 
 let timerSeconds = 1500;
 
@@ -1354,7 +1521,13 @@ function startTimer() {
       document.getElementById("timerMinutes").value
     );
 
-  if (!minutes || minutes <= 0) return;
+  if (
+    isNaN(minutes) ||
+    minutes <= 0
+  ) {
+
+    return;
+  }
 
   timerSeconds = minutes * 60;
 
@@ -1371,7 +1544,7 @@ function startTimer() {
 
         clearInterval(timerInterval);
 
-        alert("Study session complete! 🎉");
+        alert("Study session complete.");
 
       }
 
@@ -1388,7 +1561,7 @@ function updateTimer() {
   const seconds =
     timerSeconds % 60;
 
-  document.getElementById("timerDisplay").innerText =
+  document.getElementById("timerDisplay").textContent =
 
     String(minutes).padStart(2, "0") +
     ":" +
@@ -1410,9 +1583,7 @@ function resetTimer() {
 }
 
 
-// -------------------------
-// LETTER GRADE
-// -------------------------
+/* LETTER GRADE */
 
 function getLetterGrade(percentage) {
 
@@ -1429,9 +1600,7 @@ function getLetterGrade(percentage) {
 }
 
 
-// -------------------------
-// RESULTS
-// -------------------------
+/* RESULT */
 
 function showResult(id, text) {
 
